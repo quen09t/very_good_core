@@ -1,7 +1,35 @@
 {
-    "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
-    }
+  "@@locale": "en",
+  "counterAppBarTitle": "Counter",
+  "@counterAppBarTitle": {
+    "description": "Text shown in the AppBar of the Counter Page"
+  },
+  "forgotPasswordLinkText": "Forgot password ?",
+  "@forgotPasswordLinkText": {
+    "description": "Text of the forgot password link"
+  },
+  "loginLinkText": "Already have an account ?",
+  "@loginLinkText": {
+    "description": "Login link text"
+  },
+  "loginLinkActionText": "Login",
+  "@loginLinkActionText": {
+    "description": "Login link action text"
+  },
+  "registerLinkText": "Create an account",
+  "@registerLinkText": {
+    "description": "Text of the register link"
+  },
+  "registerLinkNewText": "New on the app ?",
+  "@registerLinkNewText": {
+    "description": "Text of the register link to catch new user"
+  },
+  "loginFormError": "Invalid email or password",
+  "@loginFormError": {
+    "description": "Error when form is submitted"
+  },
+  "disconnect": "Disconnect",
+  "@disconnect": {
+    "description": "Disconnect"
+  }
 }

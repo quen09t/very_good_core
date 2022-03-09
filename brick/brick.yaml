@@ -1,5 +1,5 @@
-name: very_good_core
-description: Core Very Good Flutter App
+name: very_good_core_login
+description: Core Very Good Login Flutter App
 version: 0.1.0+1
 vars:
   project_name:
@@ -17,3 +17,48 @@ vars:
     description: A short project description
     default: A Very Good App
     prompt: What is the project description?
+  api_client_name:
+    type: string
+    description: It will define the api name and the default folder name
+    default: codebuds
+    prompt: What is your api client name ?
+  api_url:
+    type: string
+    description: Your base api url
+    default: http://localhost:3000
+    prompt: What is your base api url (without trailing "/") ?
+  login_endpoint:
+    type: string
+    description: Your base login endpoint
+    default: /auth/login
+    prompt: What is your login endpoint ?
+  forgot_password_endpoint:
+    type: string
+    description: Your base forgot password endpoint
+    default: /users/reset-password
+    prompt: What is your forgot password endpoint ?
+  get_user_endpoint:
+    type: string
+    description: /me endpoint
+    default: /users/me
+    prompt: What is your /me endpoint ?
+  refresh_token_endpoint:
+    type: string
+    description: Your base refresh token endpoint
+    default: /auth/refresh
+    prompt: What is your refresh token endpoint ?
+  token_field:
+    type: string
+    description: Your token field returned by the api
+    default: accessToken
+    prompt: What is the name of your token field ?
+  refresh_token_field:
+    type: string
+    description: Your refresh token field returned by the api
+    default: refreshToken
+    prompt: What is the name of your refresh token field ?
+  is_bearer?:
+    type: boolean
+    description: If is_bearer is set to true it will add "Bearer" to the header
+    default: true
+    prompt: Is your api a "Bearer" auth ?
