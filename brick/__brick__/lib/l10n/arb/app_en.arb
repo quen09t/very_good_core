@@ -8,6 +8,22 @@
   "@forgotPasswordLinkText": {
     "description": "Text of the forgot password link"
   },
+  "forgotPasswordDescription": "Don't worry! It happens. Please enter the address associated with your account",
+  "@forgotPasswordDescription": {
+    "description": "Forgot password text description"
+  },
+  "forgotPasswordApiError": "Error while reseting password! Please try again",
+  "@forgotPasswordApiError": {
+    "description": "Text of snackbar error while reseting password"
+  },
+  "forgotPasswordApiSuccess": "An email has been sent with the reset instruction",
+  "@forgotPasswordApiSuccess": {
+    "description": "Text of snackbar success while reseting password"
+  },
+  "forgotPasswordButtonText": "Reset password",
+  "@forgotPasswordButtonText": {
+    "description": "Form button text of reset password"
+  },
   "loginLinkText": "Already have an account ?",
   "@loginLinkText": {
     "description": "Login link text"
@@ -31,5 +47,9 @@
   "disconnect": "Disconnect",
   "@disconnect": {
     "description": "Disconnect"
+  },
+  "emailRequired": "Email is required",
+  "@emailRequired": {
+    "description": "Required email text"
   }
 }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:formz/formz.dart';
 import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/l10n/l10n.dart';
 import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/login/bloc/login_bloc.dart';
 import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/login/widgets/forgot_password_link.dart';
+import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}_library/widgets/widgets.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
@@ -23,10 +23,10 @@ class LoginForm extends StatelessWidget {
         SizedBox(
           height: 20,
         ),
-        // Align(
-        //   alignment: Alignment.centerRight,
-        //   child: ForgotPasswordLink(),
-        // ),
+        Align(
+          alignment: Alignment.centerRight,
+          child: ForgotPasswordLink(),
+        ),
         SizedBox(
           height: 20,
         ),
@@ -49,31 +49,10 @@ class _FormActionButton extends StatelessWidget {
     final l10n = context.l10n;
     final status = context.watch<LoginBloc>().state.status;
 
-    return SizedBox(
-      height: 50,
-      width: double.infinity,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          onPrimary: Colors.white,
-          onSurface: Theme.of(context).primaryColorDark,
-          primary: Theme.of(context).primaryColorDark,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15),
-          ),
-        ),
-        onPressed: status.isValid
-            ? () => context.read<LoginBloc>().add(const LoginSubmitted())
-            : null,
-        child: status.isSubmissionInProgress
-            ? const CircularProgressIndicator()
-            : Text(
-                l10n.loginLinkActionText,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                ),
-              ),
-      ),
+    return FormActionButton(
+      actionText: l10n.loginLinkActionText,
+      status: status,
+      onPressed: () => context.read<LoginBloc>().add(const LoginSubmitted()),
     );
   }
 }
@@ -83,23 +62,13 @@ class _EmailInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final state = context.select((LoginBloc bloc) => bloc.state);
-
-    return TextFormField(
-      initialValue: state.email.value,
-      keyboardType: TextInputType.emailAddress,
+    final email = context.select((LoginBloc bloc) => bloc.state.email);
+    return EmailInput(
+      initialValue: email.value,
       onChanged: (newEmail) => context.read<LoginBloc>().add(
             LoginEmailChanged(email: newEmail.trim()),
           ),
-      style: const TextStyle(fontWeight: FontWeight.normal),
-      decoration: InputDecoration(
-        icon: Icon(
-          Icons.email,
-          color: Theme.of(context).primaryColorDark,
-        ),
-        hintText: 'Email*',
-        errorText: state.email.invalid ? 'Invalid email' : null,
-      ),
+      errorText: email.invalid ? 'Invalid email' : null,
     );
   }
 }
@@ -131,16 +100,14 @@ class PasswordInputState extends State<_PasswordInput> {
       obscureText: _obscureText,
       style: const TextStyle(fontWeight: FontWeight.normal),
       decoration: InputDecoration(
-        icon: Icon(
+        icon: const Icon(
           Icons.lock,
-          color: Theme.of(context).primaryColorDark,
         ),
         hintText: 'Password*',
         suffixIcon: InkWell(
           onTap: _toggle,
           child: Icon(
             _obscureText ? Icons.visibility_off : Icons.visibility,
-            color: Theme.of(context).primaryColorDark,
           ),
         ),
       ),

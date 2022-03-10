@@ -19,6 +19,8 @@ dependencies:
     path: packages/user_repository
   authentication_repository:
     path: packages/authentication_repository
+  {{project_name}}_library:
+    path: packages/{{project_name}}_library
 
 dev_dependencies:
   bloc_test: ^9.0.3
