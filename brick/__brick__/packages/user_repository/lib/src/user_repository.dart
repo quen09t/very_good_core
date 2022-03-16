@@ -30,8 +30,12 @@ class UserRepository {
     });
   }
 
-  Future<User> getUser() async {
-    return _{{#camelCase}}{{api_client_name}}{{/camelCase}}Client.getUser();
+  Future<User?> getUser() async {
+    try {
+      return _{{#camelCase}}{{api_client_name}}{{/camelCase}}Client.getUser();
+    } catch (e) {
+      return null;
+    }
   }
 
   Future<void> resetPassword({

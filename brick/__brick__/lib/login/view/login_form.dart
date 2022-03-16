@@ -94,6 +94,7 @@ class PasswordInputState extends State<_PasswordInput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      key: const Key('loginForm_passwordInput_textField'),
       onChanged: (password) => context.read<LoginBloc>().add(
             LoginPasswordChanged(password: password),
           ),

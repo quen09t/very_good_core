@@ -6,15 +6,18 @@ class EmailInput extends StatelessWidget {
     required this.onChanged,
     this.errorText,
     this.initialValue,
+    this.inputKey,
   }) : super(key: key);
 
   final void Function(String) onChanged;
   final String? errorText;
   final String? initialValue;
+  final Key? inputKey;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      key: inputKey,
       initialValue: initialValue,
       keyboardType: TextInputType.emailAddress,
       onChanged: onChanged,

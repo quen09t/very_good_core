@@ -36,7 +36,11 @@ class AuthenticationBloc
     switch (event.userAuthenticationStatus) {
       case UserAuthenticationStatus.signedIn:
         final user = await _userRepository.getUser();
-        return emit(AuthenticationState.authenticated(user));
+        return emit(
+          user != null
+              ? AuthenticationState.authenticated(user)
+              : const AuthenticationState.unauthenticated(),
+        );
       case UserAuthenticationStatus.signedOut:
         return emit(const AuthenticationState.unauthenticated());
       case UserAuthenticationStatus.unknown:
