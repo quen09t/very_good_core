@@ -10,6 +10,7 @@ class ForgotPasswordLink extends StatelessWidget {
     final l10n = context.l10n;
 
     return GestureDetector(
+      key: const Key('loginForgotPasswordLink'),
       onTap: () {
         Navigator.push(
           context,

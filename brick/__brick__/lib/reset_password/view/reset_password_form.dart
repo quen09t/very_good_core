@@ -53,6 +53,7 @@ class ResetPasswordForm extends StatelessWidget {
                 onChanged: (email) => context.read<ResetPasswordBloc>().add(
                       ResetPasswordEmailChanged(email.trim()),
                     ),
+                inputKey: const Key('resetPasswordForm_emailInput_textField'),
                 errorText: state.email.invalid ? l10n.emailRequired : null,
               );
             },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:formz/formz.dart';
 import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/l10n/l10n.dart';
 import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/login/bloc/login_bloc.dart';
 import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/login/widgets/forgot_password_link.dart';
@@ -12,29 +13,45 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
-        _EmailInput(),
-        SizedBox(
-          height: 20,
-        ),
-        _PasswordInput(),
-        SizedBox(
-          height: 20,
-        ),
-        Align(
-          alignment: Alignment.centerRight,
-          child: ForgotPasswordLink(),
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        _FormActionButton(),
-        SizedBox(
-          height: 20,
-        ),
-      ],
+    final l10n = context.l10n;
+
+    return BlocListener<LoginBloc, LoginState>(
+      listener: (context, state) {
+        if (state.status.isSubmissionFailure) {
+          ScaffoldMessenger.of(context)
+            ..hideCurrentSnackBar()
+            ..showSnackBar(
+              SnackBar(
+                content: Text(l10n.loginFormError),
+                backgroundColor: Theme.of(context).colorScheme.error,
+              ),
+            );
+        }
+      },
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          _EmailInput(),
+          SizedBox(
+            height: 20,
+          ),
+          _PasswordInput(),
+          SizedBox(
+            height: 20,
+          ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: ForgotPasswordLink(),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          _FormActionButton(),
+          SizedBox(
+            height: 20,
+          ),
+        ],
+      ),
     );
   }
 }
@@ -64,6 +81,7 @@ class _EmailInput extends StatelessWidget {
   Widget build(BuildContext context) {
     final email = context.select((LoginBloc bloc) => bloc.state.email);
     return EmailInput(
+      inputKey: const Key('loginForm_emailInput_textField'),
       initialValue: email.value,
       onChanged: (newEmail) => context.read<LoginBloc>().add(
             LoginEmailChanged(email: newEmail.trim()),

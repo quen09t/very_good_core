@@ -19,7 +19,7 @@ class AuthenticationRepository {
     );
   }
 
-  Future<void> logOut() async {
-    return _{{#camelCase}}{{api_client_name}}{{/camelCase}}Client.logOut();
+  void logOut() async {
+    _{{#camelCase}}{{api_client_name}}{{/camelCase}}Client.logOut();
   }
 }

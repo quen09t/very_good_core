@@ -46,22 +46,7 @@ class LoginPage extends StatelessWidget {
                   authenticationRepository:
                       context.read<AuthenticationRepository>(),
                 ),
-                child: BlocListener<LoginBloc, LoginState>(
-                  listener: (context, state) {
-                    if (state.status.isSubmissionFailure) {
-                      ScaffoldMessenger.of(context)
-                        ..hideCurrentSnackBar()
-                        ..showSnackBar(
-                          SnackBar(
-                            content: Text(l10n.loginFormError),
-                            backgroundColor:
-                                Theme.of(context).colorScheme.error,
-                          ),
-                        );
-                    }
-                  },
-                  child: const LoginForm(),
-                ),
+                child: const LoginForm(),
               )
             ],
           ),

@@ -17,6 +17,7 @@ class LoginLink extends StatelessWidget {
           width: 5,
         ),
         GestureDetector(
+          key: const Key('forgotPasswordLoginLink'),
           child: Text(
             l10n.loginLinkActionText,
             style: TextStyle(
