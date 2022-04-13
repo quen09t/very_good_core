@@ -2,7 +2,7 @@ import 'package:authentication_repository/authentication_repository.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}_library/validators/validators.dart';
+import 'package:{{project_name.snakeCase()}}_library/validators/validators.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';

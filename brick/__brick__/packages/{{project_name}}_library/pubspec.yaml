@@ -1,4 +1,4 @@
-name: {{#snakeCase}}{{project_name}}{{/snakeCase}}_library
+name: {{project_name.snakeCase()}}_library
 description: {{{project_name}}} library
 version: 0.0.1
 publish_to: none

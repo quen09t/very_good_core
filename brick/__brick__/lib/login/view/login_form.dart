@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/l10n/l10n.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/login/bloc/login_bloc.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/login/widgets/forgot_password_link.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}_library/widgets/widgets.dart';
+import 'package:{{project_name.snakeCase()}}/l10n/l10n.dart';
+import 'package:{{project_name.snakeCase()}}/login/bloc/login_bloc.dart';
+import 'package:{{project_name.snakeCase()}}/login/widgets/forgot_password_link.dart';
+import 'package:{{project_name.snakeCase()}}_library/widgets/widgets.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({

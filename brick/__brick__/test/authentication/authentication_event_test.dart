@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/authentication/authentication.dart';
+import 'package:{{project_name.snakeCase()}}/authentication/authentication.dart';
 import 'package:user_repository/user_repository.dart';
 
 void main() {
@@ -16,8 +16,12 @@ void main() {
     group('AuthenticationStatusChanged', () {
       test('supports value comparisons', () {
         expect(
-          UserAuthenticationStatusChanged(UserAuthenticationStatus.unknown),
-          UserAuthenticationStatusChanged(UserAuthenticationStatus.unknown),
+          const UserAuthenticationStatusChanged(
+            UserAuthenticationStatus.unknown,
+          ),
+          const UserAuthenticationStatusChanged(
+            UserAuthenticationStatus.unknown,
+          ),
         );
       });
     });

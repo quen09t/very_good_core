@@ -3,8 +3,8 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:formz/formz.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/login/bloc/login_bloc.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}_library/validators/validators.dart';
+import 'package:{{project_name.snakeCase()}}/login/bloc/login_bloc.dart';
+import 'package:{{project_name.snakeCase()}}_library/validators/validators.dart';
 
 class MockAuthenticationRepository extends Mock
     implements AuthenticationRepository {}
@@ -35,7 +35,7 @@ void main() {
               password: 'password',
             ),
           ).thenAnswer(
-            (_) => Future.value('user'),
+            (_) => Future.value(),
           );
         },
         build: () => LoginBloc(

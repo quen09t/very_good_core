@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/l10n/l10n.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/reset_password/view/view.dart';
+import 'package:{{project_name.snakeCase()}}/l10n/l10n.dart';
+import 'package:{{project_name.snakeCase()}}/reset_password/view/view.dart';
 
 class ForgotPasswordLink extends StatelessWidget {
   const ForgotPasswordLink({Key? key}) : super(key: key);

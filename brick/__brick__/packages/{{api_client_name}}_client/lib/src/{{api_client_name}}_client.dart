@@ -7,24 +7,22 @@ import 'package:dio/dio.dart';
 import 'package:fresh_dio/fresh_dio.dart';
 
 
-class {{#pascalCase}}{{api_client_name}}{{/pascalCase}}Client {
-  {{#pascalCase}}{{api_client_name}}{{/pascalCase}}Client({Dio? httpClient})
+class {{api_client_name.pascalCase()}}Client {
+  {{api_client_name.pascalCase()}}Client({Dio? httpClient})
       : _httpClient = (httpClient ?? Dio())
           ..options.baseUrl = '{{{api_url}}}'
           ..interceptors.add(_fresh)
           ..interceptors.add(LogInterceptor(
             request: false,
-            requestBody: false,
             responseHeader: false,
           ),);
 
- // TODO(karlito): FIND A WAY TO DO THIS BETTER
+
   static final _fresh = Fresh<Authentication>(
     refreshToken: (token, client) async {
-      try {
-        
-       final response =
-            await {{#pascalCase}}{{api_client_name}}{{/pascalCase}}Client().refreshToken(token!.refreshToken)
+      try { 
+        final response =
+            await {{api_client_name.pascalCase()}}Client().refreshToken(token!.refreshToken)
             as Response<Map<String, dynamic>>;
 
         final body = Authentication.fromJson(response.data!);
@@ -37,7 +35,7 @@ class {{#pascalCase}}{{api_client_name}}{{/pascalCase}}Client {
         throw RevokeTokenException();
       }
     },
-    tokenStorage: {{#pascalCase}}{{api_client_name}}{{/pascalCase}}ClientStorage(),
+    tokenStorage: {{api_client_name.pascalCase()}}ClientStorage(),
     tokenHeader: (token) {
       return {
         'Authorization':'{{#is_bearer?}}Bearer{{/is_bearer?}} ${token.accessToken}',

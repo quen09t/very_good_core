@@ -2,8 +2,8 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:formz/formz.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/reset_password/reset_password.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}_library/validators/validators.dart';
+import 'package:{{project_name.snakeCase()}}/reset_password/reset_password.dart';
+import 'package:{{project_name.snakeCase()}}_library/validators/validators.dart';
 import 'package:user_repository/user_repository.dart';
 
 class MockUserRepository extends Mock implements UserRepository {}
@@ -33,7 +33,7 @@ void main() {
               email: 'contact@codebuds.com',
             ),
           ).thenAnswer(
-            (_) => Future.value('reset'),
+            (_) => Future.value(),
           );
         },
         build: () => ResetPasswordBloc(

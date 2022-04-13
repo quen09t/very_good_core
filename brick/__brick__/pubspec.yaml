@@ -1,4 +1,4 @@
-name: {{#snakeCase}}{{project_name}}{{/snakeCase}}
+name: {{project_name.snakeCase()}}
 description: {{{description}}}
 version: 1.0.0+1
 publish_to: none
@@ -19,8 +19,8 @@ dependencies:
     path: packages/user_repository
   authentication_repository:
     path: packages/authentication_repository
-  {{project_name}}_library:
-    path: packages/{{project_name}}_library
+  {{project_name.snakeCase()}}_library:
+    path: packages/{{project_name.snakeCase()}}_library
 
 dev_dependencies:
   bloc_test: ^9.0.3

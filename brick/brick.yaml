@@ -1,5 +1,5 @@
 name: very_good_core_login
-description: Core Very Good Login Flutter App
+description: A login implementation of very_good_core
 version: 0.1.0+1
 vars:
   project_name:
@@ -29,12 +29,12 @@ vars:
     prompt: What is your base api url (without trailing "/") ?
   login_endpoint:
     type: string
-    description: Your base login endpoint
+    description: Your api login endpoint
     default: /auth/login
     prompt: What is your login endpoint ?
   forgot_password_endpoint:
     type: string
-    description: Your base forgot password endpoint
+    description: Your api forgot password endpoint
     default: /users/reset-password
     prompt: What is your forgot password endpoint ?
   get_user_endpoint:
@@ -44,12 +44,12 @@ vars:
     prompt: What is your /me endpoint ?
   refresh_token_endpoint:
     type: string
-    description: Your base refresh token endpoint
+    description: Your api refresh token endpoint
     default: /auth/refresh
     prompt: What is your refresh token endpoint ?
   token_field:
     type: string
-    description: Your token field returned by the api
+    description: Your token field name returned by the api
     default: accessToken
     prompt: What is the name of your token field ?
   refresh_token_field:
@@ -59,6 +59,6 @@ vars:
     prompt: What is the name of your refresh token field ?
   is_bearer?:
     type: boolean
-    description: If is_bearer is set to true it will add "Bearer" to the header
+    description: If is_bearer is set to true it will add "Bearer" to the Authorization header
     default: true
     prompt: Is your api a "Bearer" auth ?

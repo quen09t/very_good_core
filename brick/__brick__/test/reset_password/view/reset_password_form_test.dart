@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:formz/formz.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/reset_password/reset_password.dart';
+import 'package:{{project_name.snakeCase()}}/reset_password/reset_password.dart';
 
 import '../../helpers/helpers.dart';
 
@@ -21,7 +21,7 @@ void main() {
     });
 
     testWidgets(
-        'adds ResetPasswordEmailChanged to ResetPasswordBloc when email is updated',
+        '''adds ResetPasswordEmailChanged to ResetPassw''ordBloc when email is updated''',
         (tester) async {
       const email = 'contact@codebuds.com';
       when(() => resetPasswordBloc.state)
@@ -95,7 +95,7 @@ void main() {
     });
 
     testWidgets(
-        'ResetPasswordSubmitted is added to ResetPasswordBloc when continue is tapped',
+        '''ResetPasswordSubmitted is added to ResetPasswordBloc when continue is tapped''',
         (tester) async {
       when(() => resetPasswordBloc.state).thenReturn(
         const ResetPasswordState(status: FormzStatus.valid),

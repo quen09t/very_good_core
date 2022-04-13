@@ -5,7 +5,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:fresh/fresh.dart';
 
 
-class {{#pascalCase}}{{api_client_name}}{{/pascalCase}}ClientStorage implements TokenStorage<Authentication> {
+class {{api_client_name.pascalCase()}}ClientStorage implements TokenStorage<Authentication> {
   final storage = const FlutterSecureStorage();
 
   @override

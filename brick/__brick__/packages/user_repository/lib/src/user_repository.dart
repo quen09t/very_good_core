@@ -10,13 +10,13 @@ enum UserAuthenticationStatus {
 
 class UserRepository {
   UserRepository({
-  {{#pascalCase}}{{api_client_name}}{{/pascalCase}}Client? {{#camelCase}}{{api_client_name}}{{/camelCase}}Client,
-  }) : _{{#camelCase}}{{api_client_name}}{{/camelCase}}Client = {{#camelCase}}{{api_client_name}}{{/camelCase}}Client ?? {{#pascalCase}}{{api_client_name}}{{/pascalCase}}Client();
+  {{api_client_name.pascalCase()}}Client? {{api_client_name.camelCase()}}Client,
+  }) : _{{api_client_name.camelCase()}}Client = {{api_client_name.camelCase()}}Client ?? {{api_client_name.pascalCase()}}Client();
 
-  final {{#pascalCase}}{{api_client_name}}{{/pascalCase}}Client _{{#camelCase}}{{api_client_name}}{{/camelCase}}Client;
+  final {{api_client_name.pascalCase()}}Client _{{api_client_name.camelCase()}}Client;
 
   Stream<UserAuthenticationStatus> get userAuthenticationStatus {
-    return  _{{#camelCase}}{{api_client_name}}{{/camelCase}}Client.authenticationStatus.map((status) {
+    return  _{{api_client_name.camelCase()}}Client.authenticationStatus.map((status) {
       switch (status) {
         case AuthenticationStatus.authenticated:
           return UserAuthenticationStatus.signedIn;
@@ -32,7 +32,7 @@ class UserRepository {
 
   Future<User?> getUser() async {
     try {
-      return _{{#camelCase}}{{api_client_name}}{{/camelCase}}Client.getUser();
+      return _{{api_client_name.camelCase()}}Client.getUser();
     } catch (e) {
       return null;
     }
@@ -41,6 +41,6 @@ class UserRepository {
   Future<void> resetPassword({
     required String email,
   }) async {
-    await _{{#camelCase}}{{api_client_name}}{{/camelCase}}Client.resetPassword(email: email);
+    await _{{api_client_name.camelCase()}}Client.resetPassword(email: email);
   }
 }

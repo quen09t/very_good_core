@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/l10n/l10n.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/login/view/login_page.dart';
+import 'package:{{project_name.snakeCase()}}/l10n/l10n.dart';
+import 'package:{{project_name.snakeCase()}}/login/view/login_page.dart';
 
 class LoginLink extends StatelessWidget {
   const LoginLink({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/reset_password/reset_password.dart';
+import 'package:{{project_name.snakeCase()}}/reset_password/reset_password.dart';
 
 void main() {
   const email = 'contact@codebuds.com';

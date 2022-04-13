@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter_test/flutter_test.dart';
 import 'package:formz/formz.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/reset_password/reset_password.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}_library/validators/validators.dart';
+import 'package:{{project_name.snakeCase()}}/reset_password/reset_password.dart';
+import 'package:{{project_name.snakeCase()}}_library/validators/validators.dart';
 
 void main() {
   const email = Email.dirty('email@toto.fr');

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/l10n/l10n.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/reset_password/bloc/reset_password_bloc.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/reset_password/view/view.dart';
+import 'package:{{project_name.snakeCase()}}/l10n/l10n.dart';
+import 'package:{{project_name.snakeCase()}}/reset_password/bloc/reset_password_bloc.dart';
+import 'package:{{project_name.snakeCase()}}/reset_password/view/view.dart';
 import 'package:user_repository/user_repository.dart';
 
 class ResetPasswordPage extends StatelessWidget {

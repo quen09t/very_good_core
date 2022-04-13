@@ -9,12 +9,12 @@ part 'authentication.g.dart';
 @JsonSerializable()
 class Authentication extends Equatable {
   const Authentication({
-    required this.{{#camelCase}}{{token_field}}{{/camelCase}},
-    required this.{{#camelCase}}{{refresh_token_field}}{{/camelCase}},
+    required this.{{token_field.camelCase()}},
+    required this.{{refresh_token_field.camelCase()}},
   });
 
-  final String {{#camelCase}}{{token_field}}{{/camelCase}};
-  final String {{#camelCase}}{{refresh_token_field}}{{/camelCase}};
+  final String {{token_field.camelCase()}};
+  final String {{refresh_token_field.camelCase()}};
 
   static Authentication fromJson(Map<String, dynamic> json) =>
       _$AuthenticationFromJson(json);
@@ -24,8 +24,8 @@ class Authentication extends Equatable {
   @override
   List<Object> get props {
     return [
-      {{#camelCase}}{{token_field}}{{/camelCase}},
-      {{#camelCase}}{{refresh_token_field}}{{/camelCase}},
+      {{token_field.camelCase()}},
+      {{refresh_token_field.camelCase()}},
     ];
   }
 }

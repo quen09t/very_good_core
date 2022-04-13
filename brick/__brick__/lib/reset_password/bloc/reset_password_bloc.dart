@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}_library/validators/validators.dart';
+import 'package:{{project_name.snakeCase()}}_library/validators/validators.dart';
 import 'package:user_repository/user_repository.dart';
 
 part 'reset_password_event.dart';

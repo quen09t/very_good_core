@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/l10n/l10n.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/login/login.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/reset_password/bloc/reset_password_bloc.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/reset_password/widgets/login_link.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}_library/widgets/widgets.dart';
+import 'package:{{project_name.snakeCase()}}/l10n/l10n.dart';
+import 'package:{{project_name.snakeCase()}}/login/login.dart';
+import 'package:{{project_name.snakeCase()}}/reset_password/bloc/reset_password_bloc.dart';
+import 'package:{{project_name.snakeCase()}}/reset_password/widgets/login_link.dart';
+import 'package:{{project_name.snakeCase()}}_library/widgets/widgets.dart';
 
 class ResetPasswordForm extends StatelessWidget {
   const ResetPasswordForm({

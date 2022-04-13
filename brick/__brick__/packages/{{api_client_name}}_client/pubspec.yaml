@@ -1,4 +1,4 @@
-name: {{#snakeCase}}{{api_client_name}}{{/snakeCase}}_client
+name: {{api_client_name.snakeCase()}}_client
 description: {{{api_client_name}}} api client
 version: 0.0.1
 publish_to: none

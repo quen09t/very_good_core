@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:formz/formz.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/login/login.dart';
+import 'package:{{project_name.snakeCase()}}/login/login.dart';
 
 import '../../helpers/helpers.dart';
 

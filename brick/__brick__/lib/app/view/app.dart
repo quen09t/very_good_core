@@ -16,11 +16,11 @@ import 'package:authentication_repository/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/authentication/authentication.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/counter/counter.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/l10n/l10n.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/login/login.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/splash/splash.dart';
+import 'package:{{project_name.snakeCase()}}/authentication/authentication.dart';
+import 'package:{{project_name.snakeCase()}}/counter/counter.dart';
+import 'package:{{project_name.snakeCase()}}/l10n/l10n.dart';
+import 'package:{{project_name.snakeCase()}}/login/login.dart';
+import 'package:{{project_name.snakeCase()}}/splash/splash.dart';
 import 'package:user_repository/user_repository.dart';
 
 class App extends StatelessWidget {

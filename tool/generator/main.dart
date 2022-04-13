@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:path/path.dart' as path;
 
 final _sourcePath = path.join('app');
@@ -50,29 +51,29 @@ void main() async {
           contents
               .replaceAll(
                 'very_good_core',
-                '{{#snakeCase}}{{project_name}}{{/snakeCase}}',
+                '{{project_name.snakeCase()}}',
               )
               .replaceAll(
                 'very-good-core',
-                '{{#paramCase}}{{project_name}}{{/paramCase}}',
+                '{{project_name.paramCase()}}',
               )
               .replaceAll('A new Flutter project.', '{{{description}}}')
               .replaceAll(
                 'Very Good Core',
-                '{{#titleCase}}{{project_name}}{{/titleCase}}',
+                '{{project_name.titleCase()}}',
               )
               .replaceAll(
                 'com.example.veryGoodCore',
                 path.isWithin(_androidPath, file.path)
-                    ? '{{#dotCase}}{{org_name}}{{/dotCase}}.{{#snakeCase}}{{project_name}}{{/snakeCase}}'
-                    : '{{#dotCase}}{{org_name}}{{/dotCase}}.{{#paramCase}}{{project_name}}{{/paramCase}}',
+                    ? '{{org_name.dotCase()}}.{{project_name.snakeCase()}}'
+                    : '{{org_name.dotCase()}}.{{project_name.paramCase()}}',
               ),
         );
         final fileSegments = file.path.split('/').sublist(2);
         if (fileSegments.contains('very_good_core')) {
           final newPathSegment = fileSegments.join('/').replaceAll(
                 'very_good_core',
-                '{{#snakeCase}}{{project_name}}{{/snakeCase}}',
+                '{{project_name.snakeCase()}}',
               );
           final newPath = path.join(_targetPath, newPathSegment);
           File(newPath).createSync(recursive: true);
@@ -86,7 +87,7 @@ void main() async {
   final mainActivityKt = File(
     path.join(
       _androidKotlinPath,
-      '{{#pathCase}}{{org_name}}{{/pathCase}}',
+      '{{org_name.pathCase()}}',
       'MainActivity.kt',
     ),
   );
