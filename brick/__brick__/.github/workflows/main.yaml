@@ -1,4 +1,4 @@
-name: { { project_name.snakeCase() } }
+name: {{project_name.snakeCase()}}
 
 on: [pull_request, push]
 

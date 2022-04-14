@@ -23,11 +23,6 @@ void main() {
       await tester.pumpApp(const CounterPage());
       expect(find.byType(CounterView), findsOneWidget);
     });
-
-    testWidgets('Call route method and renders counter page', (tester) async {
-      await tester.pumpRoute(CounterPage.route());
-      expect(find.byType(CounterPage), findsOneWidget);
-    });
   });
 
   group('CounterView', () {

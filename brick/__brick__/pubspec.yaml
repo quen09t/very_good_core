@@ -13,14 +13,7 @@ dependencies:
   flutter_bloc: ^8.0.1
   flutter_localizations:
     sdk: flutter
-  formz: ^0.4.1
   intl: ^0.17.0
-  user_repository:
-    path: packages/user_repository
-  authentication_repository:
-    path: packages/authentication_repository
-  {{project_name.snakeCase()}}_library:
-    path: packages/{{project_name.snakeCase()}}_library
 
 dev_dependencies:
   bloc_test: ^9.0.3
