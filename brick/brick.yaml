@@ -1,5 +1,5 @@
-name: very_good_core_login
-description: A login implementation of very_good_core
+name: auth_token_template
+description: A auth token template implementation of very_good_core
 version: 0.1.0+1
 vars:
   project_name:
@@ -15,11 +15,11 @@ vars:
   description:
     type: string
     description: A short project description
-    default: A Very Good App
+    default: Login template app
     prompt: What is the project description?
   api_client_name:
     type: string
-    description: It will define the api name and the default folder name
+    description: Your api name and the api package folder name
     default: codebuds
     prompt: What is your api client name ?
   api_url:
