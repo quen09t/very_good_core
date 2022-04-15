@@ -1,5 +1,6 @@
 name: auth_token_template
 description: A auth token template implementation of very_good_core
+repository: https://github.com/quen09t/very_good_core/tree/main/brick
 version: 0.1.0+1
 vars:
   project_name:
