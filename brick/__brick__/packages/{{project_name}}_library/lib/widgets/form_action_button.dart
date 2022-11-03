@@ -20,9 +20,6 @@ class FormActionButton extends StatelessWidget {
       height: 50,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          onPrimary: Colors.white,
-          onSurface: Colors.blue,
-          primary: Colors.blue,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),

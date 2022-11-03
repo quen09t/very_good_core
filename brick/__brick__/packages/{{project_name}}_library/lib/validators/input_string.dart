@@ -8,6 +8,6 @@ class InputString extends FormzInput<String, InputStringValidationError> {
 
   @override
   InputStringValidationError? validator(String? value) {
-    return value?.isNotEmpty == true ? null : InputStringValidationError.empty;
+    return value?.isNotEmpty ?? false ? null : InputStringValidationError.empty;
   }
 }

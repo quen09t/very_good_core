@@ -114,7 +114,7 @@ void main() {
       'emits [unauthenticated] when status is authenticated but getUser fails',
       setUp: () {
         when(() => userRepository.getUser())
-            .thenAnswer((invocation) => Future.value(null));
+            .thenAnswer((invocation) => Future.value());
       },
       build: () => AuthenticationBloc(
         authenticationRepository: authenticationRepository,

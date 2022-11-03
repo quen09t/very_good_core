@@ -7,27 +7,27 @@ environment:
   sdk: ">=2.16.0 <3.0.0"
 
 dependencies:
-  bloc: ^8.0.3
+  authentication_repository:
+    path: packages/authentication_repository
+  bloc: ^8.1.0
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.0.1
+  flutter_bloc: ^8.1.1
   flutter_localizations:
     sdk: flutter
   formz: ^0.4.1
   intl: ^0.17.0
   user_repository:
     path: packages/user_repository
-  authentication_repository:
-    path: packages/authentication_repository
   {{project_name.snakeCase()}}_library:
     path: packages/{{project_name.snakeCase()}}_library
 
 dev_dependencies:
-  bloc_test: ^9.0.3
+  bloc_test: ^9.1.0
   flutter_test:
     sdk: flutter
   mocktail: ^0.3.0
-  very_good_analysis: ^2.4.0
+  very_good_analysis: ^3.1.0
 
 flutter:
   uses-material-design: true

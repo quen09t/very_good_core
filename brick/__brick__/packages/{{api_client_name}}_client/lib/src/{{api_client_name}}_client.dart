@@ -21,16 +21,9 @@ class {{api_client_name.pascalCase()}}Client {
   static final _fresh = Fresh<Authentication>(
     refreshToken: (token, client) async {
       try { 
-        final response =
-            await {{api_client_name.pascalCase()}}Client().refreshToken(token!.refreshToken)
-            as Response<Map<String, dynamic>>;
 
-        final body = Authentication.fromJson(response.data!);
+        return await CodebudsClient().refreshToken(token!.refreshToken);
 
-        return Authentication(
-          accessToken: body.{{{token_field}}},
-          refreshToken: body.{{{refresh_token_field}}},
-        );
       } catch (e) {
         throw RevokeTokenException();
       }
@@ -73,11 +66,12 @@ class {{api_client_name.pascalCase()}}Client {
     );
   }
 
-  Future refreshToken(String refreshToken) async {
-    return _httpClient.post<Map<String, dynamic>>(
+  Future<Authentication> refreshToken(String refreshToken) async {
+      final response = await _httpClient.post<Map<String, dynamic>>(
       '{{{refresh_token_endpoint}}}',
       data: convert.jsonEncode({'refreshToken': refreshToken}),
     );
+    return Authentication.fromJson(response.data!);
   }
 
   Future logOut() async {
